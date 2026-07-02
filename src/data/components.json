@@ -1,0 +1,50 @@
+[
+  {
+    "id": "placa_base",
+    "name": "Placa base",
+    "description": "La placa base es la placa principal donde se conectan todos los componentes.",
+    "function": "Conectar y permitir la comunicación entre la CPU, memoria, almacenamiento, tarjeta gráfica y otros periféricos.",
+    "curiosity": "Algunas placas tienen LEDs para mostrar errores que ayudan a diagnosticar fallos.",
+    "age_range": "1º-4º ESO"
+  },
+  {
+    "id": "procesador",
+    "name": "Procesador (CPU)",
+    "description": "El procesador es el cerebro del ordenador.",
+    "function": "Realiza los cálculos y las instrucciones que hacen funcionar los programas.",
+    "curiosity": "Los procesadores modernos tienen millones de millones de transistores en un espacio muy pequeño.",
+    "age_range": "1º-4º ESO"
+  },
+  {
+    "id": "memoria_ram",
+    "name": "Memoria RAM",
+    "description": "La memoria RAM guarda datos temporales que usa el procesador.",
+    "function": "Almacenar datos y programas que se están usando en ese momento para acceso rápido.",
+    "curiosity": "Si apagas el ordenador, la RAM pierde su contenido (memoria volátil).",
+    "age_range": "1º-4º ESO"
+  },
+  {
+    "id": "ssd",
+    "name": "SSD",
+    "description": "El SSD es el disco de almacenamiento rápido del ordenador.",
+    "function": "Almacena el sistema operativo, aplicaciones y archivos de forma permanente.",
+    "curiosity": "Un SSD no tiene partes móviles, por eso es más rápido y resistente que un disco duro tradicional.",
+    "age_range": "1º-4º ESO"
+  },
+  {
+    "id": "tarjeta_grafica",
+    "name": "Tarjeta gráfica (GPU)",
+    "description": "La tarjeta gráfica procesa los gráficos y las imágenes que ves en pantalla.",
+    "function": "Generar imágenes y gestionar tareas de procesamiento en paralelo, útil en juegos y edición.",
+    "curiosity": "Las GPUs se usan también en inteligencia artificial por su potencia para cálculo paralelo.",
+    "age_range": "1º-4º ESO"
+  },
+  {
+    "id": "fuente_alimentacion",
+    "name": "Fuente de alimentación",
+    "description": "La fuente convierte la corriente eléctrica para alimentar los componentes del PC.",
+    "function": "Suministrar voltajes estables y proteger contra subidas de tensión.",
+    "curiosity": "Una fuente de mala calidad puede causar fallos en otros componentes.",
+    "age_range": "1º-4º ESO"
+  }
+]
