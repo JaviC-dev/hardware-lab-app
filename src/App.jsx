@@ -1,25 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Board from './components/Board'
-import SidePanel from './components/SidePanel'
 
 export default function App() {
-  const [selected, setSelected] = useState(null)
-
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      <header className="max-w-5xl mx-auto p-6">
-        <h1 className="text-3xl font-semibold">Hardware Lab</h1>
-        <p className="text-gray-600 mt-1">Haz clic en cualquier componente para saber más.</p>
-      </header>
-
-      <main className="max-w-5xl mx-auto p-6">
-        <Board onSelect={(id) => setSelected(id)} selectedId={selected} />
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_#f8fbff,_#f4f7fb_55%,_#eef2f7)] text-slate-900">
+      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+        <Board />
       </main>
-
-      <SidePanel
-        componentId={selected}
-        onClose={() => setSelected(null)}
-      />
     </div>
   )
 }
