@@ -141,7 +141,7 @@ export default function Board() {
         <section className="wood-panel p-5">
           <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-amber-100">Enciclopedia Tecnica</h2>
+              <h2 className="text-xl font-semibold text-amber-100">Enciclopedia Técnica</h2>
               <p className="text-sm text-amber-200">Pulsa sobre cada componente para abrir su ficha tecnica.</p>
             </div>
             <span className="text-sm font-semibold text-amber-300">{selectedInfo ? `${selectedInfo.nombre}` : 'Selecciona un componente'}</span>
