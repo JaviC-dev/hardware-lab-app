@@ -133,7 +133,7 @@
 
 ### Tercera Versión: Modificación de estilos 
 
-```
+
 > Actúa como un diseñador UX/UI senior especializado en interfaces inmersivas y temáticas. Quiero transformar completamente la apariencia visual de la aplicación **Hardware Lab** para que tenga una estética **Steampunk**, manteniendo toda la funcionalidad existente. No debes modificar la lógica de la aplicación, únicamente el diseño, la experiencia de usuario y los recursos visuales.
 >
 > ## Objetivo
