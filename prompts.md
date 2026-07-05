@@ -130,3 +130,155 @@
 > Mantener un aspecto moderno, con colores suaves, mucho espacio en blanco, tarjetas con esquinas redondeadas, sombras ligeras y animaciones rápidas. El diseño debe ser responsive y transmitir la sensación de una aplicación educativa moderna, no de una página web tradicional.
 >
 > Genera todo el código necesario modificando el proyecto existente, reutilizando al máximo la estructura actual y evitando reescribir código que ya funciona.
+
+### Tercera Versión: Modificación de estilos 
+
+```
+> Actúa como un diseñador UX/UI senior especializado en interfaces inmersivas y temáticas. Quiero transformar completamente la apariencia visual de la aplicación **Hardware Lab** para que tenga una estética **Steampunk**, manteniendo toda la funcionalidad existente. No debes modificar la lógica de la aplicación, únicamente el diseño, la experiencia de usuario y los recursos visuales.
+>
+> ## Objetivo
+>
+> Convertir la aplicación en un laboratorio mecánico inspirado en el Steampunk, donde el alumnado tenga la sensación de estar reparando un ordenador dentro del taller de un inventor del siglo XIX.
+>
+> ## Estilo visual
+>
+> La interfaz debe inspirarse en:
+>
+> - Máquinas de vapor.
+> - Engranajes de latón.
+> - Cobre envejecido.
+> - Madera oscura.
+> - Cuero.
+> - Instrumentos científicos antiguos.
+> - Relojería de precisión.
+> - Planos técnicos antiguos.
+> - Talleres de ingeniería victoriana.
+>
+> Debe transmitir una sensación de aventura, exploración e ingeniería.
+>
+> ## Paleta de colores
+>
+> Utilizar principalmente:
+>
+> - Marrón oscuro.
+> - Cobre.
+> - Latón.
+> - Bronce.
+> - Beige envejecido.
+> - Negro carbón.
+> - Gris metálico.
+> - Toques de color ámbar para elementos interactivos.
+>
+> Evitar colores planos y demasiado saturados.
+>
+> ## Fondo
+>
+> Sustituir el fondo blanco por uno con textura envejecida similar a papel antiguo, metal oxidado o madera.
+>
+> El fondo debe ser discreto para no dificultar la lectura.
+>
+> ## Tipografía
+>
+> Utilizar una tipografía elegante con inspiración victoriana para los títulos.
+>
+> Para el texto utilizar una tipografía muy legible.
+>
+> Nunca sacrificar la accesibilidad por la estética.
+>
+> ## Tarjetas
+>
+> Todas las tarjetas deben parecer placas metálicas o paneles de madera con remaches.
+>
+> Añadir:
+>
+> - Bordes metálicos.
+> - Tornillos decorativos.
+> - Sombras suaves.
+> - Relieves.
+> - Efecto de material.
+>
+> ## Botones
+>
+> Los botones deben parecer mecanismos mecánicos.
+>
+> Al pasar el ratón:
+>
+> - Cambiar ligeramente de color.
+> - Simular que se hunden.
+> - Añadir una transición suave.
+>
+> ## Componentes del ordenador
+>
+> Mantener las imágenes actuales de los componentes, pero presentarlas como si fueran piezas expuestas sobre una mesa de trabajo antigua.
+>
+> Las tarjetas deben parecer etiquetas de museo o fichas de inventario.
+>
+> ## Panel de información
+>
+> El panel lateral debe parecer una libreta técnica de un inventor.
+>
+> Incluir:
+>
+> - Fondo de pergamino.
+> - Bordes decorativos.
+> - Iconografía inspirada en ingeniería.
+> - Buena jerarquía visual.
+>
+> ## Drag & Drop
+>
+> Cuando un componente pueda colocarse correctamente:
+>
+> - Resaltar la zona con un brillo dorado.
+> - Mostrar una ligera animación.
+>
+> Cuando el componente quede colocado:
+>
+> - Animación suave.
+> - Sensación de encajar una pieza mecánica.
+>
+> ## Barra de progreso
+>
+> Sustituir la barra moderna por un indicador inspirado en un manómetro o instrumento analógico.
+>
+> ## Iconografía
+>
+> Utilizar iconos con estética Steampunk:
+>
+> - Engranajes.
+> - Llaves inglesas.
+> - Tornillos.
+> - Brújulas.
+> - Vapor.
+> - Relojes.
+>
+> ## Animaciones
+>
+> Incorporar pequeñas animaciones elegantes:
+>
+> - Engranajes girando lentamente.
+> - Agujas moviéndose.
+> - Vapor muy sutil.
+> - Destellos metálicos.
+>
+> Las animaciones nunca deben distraer del aprendizaje.
+>
+> ## Accesibilidad
+>
+> Mantener un contraste suficiente entre texto y fondo.
+>
+> Garantizar que toda la aplicación siga siendo cómoda de utilizar por alumnado de ESO.
+>
+> ## Responsive
+>
+> El diseño debe adaptarse perfectamente a móviles, tablets y ordenadores.
+>
+> ## Restricciones
+>
+> - No modificar ninguna funcionalidad existente.
+> - No cambiar la estructura de componentes React.
+> - No eliminar ninguna característica ya implementada.
+> - Solo modificar estilos, recursos visuales y experiencia de usuario.
+> - Aprovechar Tailwind CSS para implementar el nuevo diseño.
+>
+> El resultado debe parecer un auténtico laboratorio Steampunk donde el alumnado aprende hardware explorando el taller de un ingeniero victoriano.
+```

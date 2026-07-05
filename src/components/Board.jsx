@@ -52,7 +52,7 @@ export default function Board() {
 
   const handleDragEnd = (event) => {
     const { active, over } = event
-    const droppedZone = over?.data?.current?.zoneId
+    const droppedZone = over?.id || over?.data?.current?.zoneId
     const component = componentsData.find((item) => item.id === active.id)
 
     if (!component || !droppedZone) {
@@ -89,12 +89,12 @@ export default function Board() {
   return (
     <DndContext sensors={sensors} onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
       <div className="space-y-6">
-        <div className="rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.25)] backdrop-blur">
+        <div className="plate-metal p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-600">Hardware Lab</p>
-              <h1 className="mt-2 text-3xl font-semibold text-slate-900">Monta tu ordenador paso a paso</h1>
-              <p className="mt-2 max-w-2xl text-slate-600">Arrastra cada componente hasta su zona correcta sobre la placa base.</p>
+              <p className="subtitle-steam text-sm uppercase">Laboratorio Mecánico</p>
+              <h1 className="title-victorian mt-2 text-4xl">Monta tu Ordenador</h1>
+              <p className="mt-3 max-w-2xl text-amber-100">Arrastra cada pieza hasta su zona correcta sobre la placa base.</p>
             </div>
             <div className="w-full max-w-sm">
               <ProgressBar installedCount={installedCount} total={componentsData.length} />
@@ -104,29 +104,33 @@ export default function Board() {
 
         <div className="grid gap-6 xl:grid-cols-[1.5fr_0.95fr]">
           <div className="space-y-4">
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-3 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.3)]">
-              <img src={pcComponents} alt="Placa base del ordenador" className="w-full rounded-[1.5rem]" />
-              {zones.map((zone) => (
-                <DropZone
-                  key={zone.id}
-                  zone={zone}
-                  activeComponent={activeComponent}
-                  installed={installedIds}
-                  hoveredZone={hoveredZone}
-                />
-              ))}
+            <div className="wood-panel relative overflow-hidden p-3">
+              <div className="relative mx-auto w-full overflow-hidden rounded-2xl border-4 border-amber-900 bg-amber-950/20">
+                <img src={pcComponents} alt="Placa base del ordenador" className="h-auto max-h-[480px] w-full object-contain" />
+                <div className="absolute inset-0">
+                  {zones.map((zone) => (
+                    <DropZone
+                      key={zone.id}
+                      zone={zone}
+                      activeComponent={activeComponent}
+                      installed={installedIds}
+                      hoveredZone={hoveredZone}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="wood-panel p-5">
               <div className="mb-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900">Bandeja de componentes</h3>
-                  <p className="text-sm text-slate-500">Arrastra cada pieza a la zona correcta.</p>
+                  <h3 className="text-lg font-semibold text-amber-100">Bandeja de Trabajo</h3>
+                  <p className="text-sm text-amber-200">Arrastra cada pieza al lugar correcto.</p>
                 </div>
-                <span className={`rounded-full px-3 py-1 text-sm font-medium ${feedback.type === 'success' ? 'bg-emerald-100 text-emerald-700' : feedback.type === 'error' ? 'bg-rose-100 text-rose-700' : 'bg-slate-100 text-slate-600'}`}>
-                  {feedback.message || 'Listo para empezar'}
+                <span className={`rounded-full px-3 py-1 text-sm font-medium transition ${feedback.type === 'success' ? 'bg-emerald-900/80 text-emerald-100' : feedback.type === 'error' ? 'bg-red-900/80 text-red-100' : 'bg-amber-900/60 text-amber-100'}`}>
+                  {feedback.message || 'Esperando...'}
                 </span>
               </div>
               <ComponentTray components={componentsData} installedIds={installedIds} />
@@ -134,13 +138,13 @@ export default function Board() {
           </div>
         </div>
 
-        <section className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm">
+        <section className="wood-panel p-5">
           <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-slate-900">Información sobre los componentes</h2>
-              <p className="text-sm text-slate-500">Pulsa sobre cada botón para abrir su información en un desplegable.</p>
+              <h2 className="text-xl font-semibold text-amber-100">Enciclopedia Tecnica</h2>
+              <p className="text-sm text-amber-200">Pulsa sobre cada componente para abrir su ficha tecnica.</p>
             </div>
-            <span className="text-sm font-medium text-sky-600">{selectedInfo ? `Seleccionado: ${selectedInfo.nombre}` : 'Selecciona un componente'}</span>
+            <span className="text-sm font-semibold text-amber-300">{selectedInfo ? `${selectedInfo.nombre}` : 'Selecciona un componente'}</span>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -149,8 +153,8 @@ export default function Board() {
                 key={component.id}
                 type="button"
                 onClick={() => toggleComponentInfo(component)}
-                className={`rounded-full px-3 py-2 text-sm font-medium transition ${
-                  selectedInfo?.id === component.id ? 'bg-sky-600 text-white shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                className={`btn-steam transition ${
+                  selectedInfo?.id === component.id ? 'ring-2 ring-amber-300' : ''
                 }`}
               >
                 {component.nombre}
@@ -159,31 +163,33 @@ export default function Board() {
           </div>
 
           {selectedInfo && (
-            <div className="mt-5 rounded-2xl border border-sky-200 bg-sky-50/70 p-4 shadow-sm">
-              <div className="flex items-start gap-3">
-                <img src={selectedInfo.imagen} alt={selectedInfo.nombre} className="h-14 w-14 rounded-2xl bg-white p-2 object-contain shadow-sm" />
+            <div className="mt-5 rounded-2xl border-2 border-amber-700 bg-amber-900/30 p-5 backdrop-blur">
+              <div className="flex items-start gap-4">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-amber-800/50 p-3 shadow-lg">
+                  <img src={selectedInfo.imagen} alt={selectedInfo.nombre} className="h-12 w-12 object-contain" />
+                </div>
                 <div>
-                  <h3 className="font-semibold text-slate-900">{selectedInfo.nombre}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{selectedInfo.descripcion}</p>
+                  <h3 className="font-semibold text-amber-100">{selectedInfo.nombre}</h3>
+                  <p className="mt-1 text-sm text-amber-200">{selectedInfo.descripcion}</p>
                 </div>
               </div>
 
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl bg-white p-4 shadow-sm">
-                  <p className="font-semibold text-slate-800">¿Qué hace?</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{selectedInfo.funcion}</p>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                <div className="rounded-xl border border-amber-700 bg-amber-900/20 p-4">
+                  <p className="font-semibold text-amber-100">Que hace?</p>
+                  <p className="mt-2 text-sm leading-6 text-amber-200">{selectedInfo.funcion}</p>
                 </div>
-                <div className="rounded-2xl bg-white p-4 shadow-sm">
-                  <p className="font-semibold text-slate-800">Importancia</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{selectedInfo.importancia}</p>
+                <div className="rounded-xl border border-amber-700 bg-amber-900/20 p-4">
+                  <p className="font-semibold text-amber-100">Importancia</p>
+                  <p className="mt-2 text-sm leading-6 text-amber-200">{selectedInfo.importancia}</p>
                 </div>
-                <div className="rounded-2xl bg-white p-4 shadow-sm">
-                  <p className="font-semibold text-slate-800">Dónde va</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{selectedInfo.ubicacion}</p>
+                <div className="rounded-xl border border-amber-700 bg-amber-900/20 p-4">
+                  <p className="font-semibold text-amber-100">Ubicacion</p>
+                  <p className="mt-2 text-sm leading-6 text-amber-200">{selectedInfo.ubicacion}</p>
                 </div>
-                <div className="rounded-2xl bg-white p-4 shadow-sm">
-                  <p className="font-semibold text-slate-800">Dato curioso</p>
-                  <p className="mt-1 text-sm leading-6 text-slate-600">{selectedInfo.datoCurioso}</p>
+                <div className="rounded-xl border border-amber-700 bg-amber-900/20 p-4">
+                  <p className="font-semibold text-amber-100">Nota historica</p>
+                  <p className="mt-2 text-sm leading-6 text-amber-200">{selectedInfo.datoCurioso}</p>
                 </div>
               </div>
             </div>

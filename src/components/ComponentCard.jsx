@@ -16,24 +16,24 @@ export default function ComponentCard({ component, isPlaced }) {
 
   return (
     <div
-      className={`flex w-full items-center gap-3 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition ${
-        isPlaced ? 'cursor-default opacity-70' : 'hover:-translate-y-0.5 hover:shadow-md'
+      className={`flex w-full items-center gap-4 rounded-xl border-2 border-amber-800 bg-amber-900/40 p-3 shadow-lg backdrop-blur transition ${
+        isPlaced ? 'cursor-default opacity-50' : 'hover:bg-amber-900/60'
       }`}
     >
       <div
         ref={setNodeRef}
         {...listeners}
         {...attributes}
-        className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-slate-50 p-2 transition ${
+        className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-lg border border-amber-700 bg-amber-800/60 transition ${
           isPlaced ? 'cursor-default' : 'cursor-grab'
-        } ${isDragging ? 'scale-105 shadow-xl' : ''}`}
+        } ${isDragging ? 'scale-125 shadow-2xl ring-2 ring-amber-400' : ''}`}
         style={draggableStyle}
       >
-        <img src={component.imagen} alt={component.nombre} className="h-10 w-10 object-contain" />
+        <img src={component.imagen} alt={component.nombre} className="h-12 w-12 object-contain" />
       </div>
       <div className="min-w-0">
-        <p className="font-semibold text-slate-800">{component.nombre}</p>
-        <p className="text-sm text-slate-500">Arrastra la imagen al lugar correcto</p>
+        <p className="font-semibold text-amber-100">{component.nombre}</p>
+        <p className="text-sm text-amber-300">Arrastra la imagen</p>
       </div>
     </div>
   )

@@ -1,19 +1,26 @@
 import React from 'react'
 
 export default function ProgressBar({ installedCount, total }) {
-  const progress = Math.round((installedCount / total) * 100)
+  const progress = (installedCount / total) * 100
 
   return (
-    <div className="w-full">
-      <div className="mb-2 flex items-center justify-between text-sm text-slate-600">
-        <span>Componentes instalados</span>
-        <span className="font-semibold text-slate-800">{installedCount} / {total}</span>
+    <div className="space-y-2">
+      <div className="flex items-center justify-between text-xs text-amber-300">
+        <span>Progreso</span>
+        <span className="font-semibold text-amber-100">{installedCount}/{total}</span>
       </div>
-      <div className="h-2.5 overflow-hidden rounded-full bg-slate-200">
+
+      <div className="h-3 rounded-full border border-amber-800 bg-amber-950/70 p-1 shadow-inner">
         <div
-          className="h-full rounded-full bg-gradient-to-r from-sky-500 to-emerald-500 transition-all duration-300"
-          style={{ width: `${progress}%` }}
+          className="h-full rounded-full bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-600 transition-all duration-300"
+          style={{ width: `${Math.max(progress, 4)}%` }}
         />
+      </div>
+
+      <div className="flex justify-between text-xs text-amber-300">
+        <span>0%</span>
+        <span className="font-semibold text-amber-100">{Math.round(progress)}%</span>
+        <span>100%</span>
       </div>
     </div>
   )

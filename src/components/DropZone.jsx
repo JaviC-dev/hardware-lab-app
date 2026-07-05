@@ -13,23 +13,23 @@ export default function DropZone({ zone, activeComponent, onDrop, installed, hov
   return (
     <div
       ref={setNodeRef}
-      className={`absolute rounded-2xl border-2 transition-all duration-200 ${
+      className={`absolute z-20 rounded-2xl border-2 transition-all duration-200 ${
         isInstalled
-          ? 'border-emerald-400 bg-emerald-500/15 shadow-lg'
+          ? 'border-amber-400 bg-amber-500/25 shadow-xl'
           : isActive
-            ? 'border-sky-400 bg-sky-400/10 shadow-md'
-            : 'border-transparent bg-transparent'
+            ? 'border-yellow-400 bg-yellow-400/15 shadow-2xl animate-pulse-steam'
+            : 'border-amber-900/40 bg-amber-950/10'
       }`}
       style={zone.style}
     >
       {!isInstalled && (
-        <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-slate-300/70 text-center text-xs font-medium text-slate-400">
-          {activeComponent ? 'Suelta aquí' : zone.label}
+        <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-amber-500/50 text-center text-xs font-medium text-amber-300">
+          {activeComponent ? 'Encaja aqui' : zone.label}
         </div>
       )}
       {isInstalled && (
-        <div className="flex h-full items-center justify-center rounded-2xl text-sm font-semibold text-emerald-700">
-          {zone.label}
+        <div className="flex h-full items-center justify-center rounded-2xl text-sm font-semibold text-amber-100">
+          ✓ {zone.label}
         </div>
       )}
     </div>
