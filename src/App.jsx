@@ -1,7 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Board from './components/Board'
+import HomePage from './components/HomePage'
 
 export default function App() {
+  const [page, setPage] = useState('home')
+
+  const headerNav = (
+    <div className="flex items-center gap-3">
+      <button
+        type="button"
+        onClick={() => setPage('home')}
+        className={`rounded-full border px-3 py-1 text-sm transition ${
+          page === 'home'
+            ? 'border-amber-500 bg-amber-700/60 text-amber-100'
+            : 'border-amber-700/60 bg-amber-900/40 text-amber-200 hover:bg-amber-800/50'
+        }`}
+      >
+        Inicio
+      </button>
+      <button
+        type="button"
+        onClick={() => setPage('build')}
+        className={`rounded-full border px-3 py-1 text-sm transition ${
+          page === 'build'
+            ? 'border-amber-500 bg-amber-700/60 text-amber-100'
+            : 'border-amber-700/60 bg-amber-900/40 text-amber-200 hover:bg-amber-800/50'
+        }`}
+      >
+        Monta tu PC
+      </button>
+      <button
+        type="button"
+        onClick={() => setPage('info')}
+        className={`rounded-full border px-3 py-1 text-sm transition ${
+          page === 'info'
+            ? 'border-amber-500 bg-amber-700/60 text-amber-100'
+            : 'border-amber-700/60 bg-amber-900/40 text-amber-200 hover:bg-amber-800/50'
+        }`}
+      >
+        Info. Componentes
+      </button>
+    </div>
+  )
+
   return (
     <div className="min-h-screen text-amber-950">
       <header className="sticky top-0 z-30 border-b border-amber-900/40 bg-amber-950/80 backdrop-blur">
@@ -10,9 +51,7 @@ export default function App() {
             <p className="text-xs uppercase tracking-[0.3em] text-amber-300">Laboratorio interactivo</p>
             <h1 className="text-xl font-semibold text-amber-100">Hardware Lab</h1>
           </div>
-          <div className="rounded-full border border-amber-700/60 bg-amber-900/40 px-3 py-1 text-sm text-amber-200">
-            Montaje de PC
-          </div>
+          {headerNav}
         </div>
       </header>
 
@@ -42,7 +81,13 @@ export default function App() {
       </div>
 
       <main className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
-        <Board />
+        {page === 'home' && <HomePage onNavigate={setPage} />}
+        {page === 'build' && <Board />}
+        {page === 'info' && (
+          <div className="max-w-4xl mx-auto">
+            <Board showOnlyInfo />
+          </div>
+        )}
       </main>
 
       <footer className="relative z-10 border-t border-amber-900/40 bg-amber-950/80 px-4 py-4 text-center text-sm text-amber-200 sm:px-6 lg:px-8">
