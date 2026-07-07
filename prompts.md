@@ -281,4 +281,7 @@
 > - Aprovechar Tailwind CSS para implementar el nuevo diseño.
 >
 > El resultado debe parecer un auténtico laboratorio Steampunk donde el alumnado aprende hardware explorando el taller de un ingeniero victoriano.
-```
+
+
+### Cuarta Version: Menu principal.
+> Creame una página de inicio con un título "Hardware Lab" y que tenga dos botones que enlacen a los secciones: Información sobre componentes, donde aparaecerá la actual zona baja compuesta con botones que hacen aparecer información y "Monta tu PC" donde aparecerá el resto de la página. Debes mantener el header y el footer igual para toda la web. Quita el título de "Hardware Lab", y pon un "Bienvenido". Además, incluye una animación de dos engranajes para sustituir a la animación actual. El texto no se ve bien, cambia el estilo de la palabra Bienvenido para que sea oscuro.
