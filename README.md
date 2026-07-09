@@ -19,7 +19,7 @@ Está pensada para alumnado de secundaria, especialmente de 1.º a 4.º de ESO, 
 - **Barra de progreso** que muestra el avance del montaje en tiempo real.
 - **Feedback visual** al colocar correctamente un componente o al cometer un error (mensajes temporales con colores distintivos).
 - **Modal de finalización** al completar correctamente el montaje, con opción de reiniciar.
-- **Sección de información de componentes** con paneles desplegables que explican la función y detalles de cada pieza.
+- **Sección de información de componentes** con fichas técnicas detalladas que se muestran al seleccionar cada pieza.
 - **Diseño temático oscuro** estilo steampunk/victoriano con animaciones de engranajes, paneles de madera y metal.
 - **Navegación entre páginas** mediante cabecera fija con botones de sección.
 
@@ -86,6 +86,7 @@ hardware-lab/
     ├── assets/               ← Imágenes de componentes y placa base
     ├── components/
     │   ├── Board.jsx         ← Página de montaje con DnD
+    │   ├── ComponentCard.jsx ← Tarjeta de componente arrastrable
     │   ├── ComponentTray.jsx ← Bandeja de componentes arrastrables
     │   ├── CompletionModal.jsx ← Modal de finalización
     │   ├── DropZone.jsx      ← Zona de colocación en la placa
@@ -93,7 +94,7 @@ hardware-lab/
     │   ├── InfoPanel.jsx     ← Panel informativo de componentes
     │   └── ProgressBar.jsx   ← Barra de progreso del montaje
     └── data/
-        ├── components.json     ← Datos raw de componentes
+        ├── components.json     ← Datos raw de componentes (legacy)
         └── componentsData.js   ← Datos procesados con zonas
 ```
 
@@ -103,7 +104,7 @@ La aplicación consta de **tres pantallas** navegables desde la cabecera:
 
 1. **Inicio** — Pantalla de bienvenida con dos botones principales (Monta tu PC / Información sobre componentes) y animaciones decorativas de engranajes.
 2. **Monta tu PC** — Vista principal donde el usuario arrastra componentes desde la bandeja hasta las zonas correctas sobre la imagen de la placa base. Incluye barra de progreso y feedback en tiempo real.
-3. **Info. Componentes** — Muestra el panel informativo de cada componente con descripciones detalladas en acordeones desplegables.
+3. **Info. Componentes** — Muestra el panel informativo de cada componente. Al seleccionar un componente se despliegan automáticamente cuatro secciones detalladas: qué hace, importancia, ubicación y nota histórica.
 
 ### Flujo de drag & drop
 
@@ -119,7 +120,7 @@ La aplicación consta de **tres pantallas** navegables desde la cabecera:
 ### v0.2.0 (MVP actual)
 -  Implementación de **navegación multipágina** (Inicio / Montaje / Info Componentes).
 -  Nueva **página de inicio** con diseño temático, engranajes animados y acceso directo a las funcionalidades.
--  Nueva **sección de información de componentes** con paneles desplegables educativos.
+-  Nueva **sección de información de componentes** con fichas técnicas detalladas al seleccionar cada pieza.
 -  Rediseño completo de la interfaz con **temática steampunk/victoriana** (colores ámbar, paneles de madera y metal).
 -  Añadidas **animaciones decorativas** de engranajes (rotación y contrarrotación).
 -  **Imagen actualizada de la placa base** con zonas de colocación más visibles.
