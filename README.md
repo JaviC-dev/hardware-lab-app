@@ -68,6 +68,33 @@ npm run build
 npm run preview
 ```
 
+##  Instrucciones para su uso en clase
+
+Hardware Lab está diseñado para integrarse en sesiones de tecnología de 1.º a 4.º de ESO. A continuación se proponen dinámicas de uso según el tiempo disponible y el nivel del grupo.
+
+### Dinámica rápida (15–20 min) — Introducción a los componentes
+
+1. El profesorado proyecta la aplicación en la pizarra digital.
+2. Se abre la sección **Info. Componentes** y se van seleccionando las piezas una a una, comentando en voz alta su función e importancia.
+3. A continuación, se accede a **Monta tu PC** y se invita a un alumno o alumna a arrastrar el primer componente a su zona correcta.
+4. Se repite la operación con distintos voluntarios hasta completar el montaje.
+5. Al finalizar, se abre un turno de preguntas: *"¿Qué pasa si la fuente de alimentación falla?", "¿Por qué la RAM pierde los datos al apagar?"*.
+
+### Sesión completa (45–50 min) — Taller de montaje
+
+1. **Introducción (5 min):** El profesorado explica el objetivo de la sesión y presenta las tres secciones de la aplicación.
+2. **Exploración guiada (10 min):** Cada alumno, en parejas o individualmente, abre la aplicación en su dispositivo y explora la sección de información de componentes.
+3. **Montaje interactivo (20 min):** Los alumnos realizan el montaje completo. Pueden ayudarse entre sí, pero cada uno debe completar su propio montaje.
+4. **Puesta en común (10 min):** Se proyectan los resultados y se discuten las dificultades encontradas. El profesorado refuerza los conceptos clave (función de la CPU, diferencia entre RAM y disco duro, etc.).
+
+### Variantes y recomendaciones
+
+- **Trabajo en parejas:** Un alumno lee la información del componente en voz alta mientras el otro lo arrastra a la zona correcta. Fomenta la cooperación y el debate.
+- **Competición por equipos:** Cronometrar el montaje y ver qué equipo lo completa en menos tiempo con menos errores.
+- **Refuerzo con preguntas:** Tras completar el montaje, el profesorado puede pedir a los alumnos que escriban en una frase la función de cada componente.
+- **Uso sin dispositivos individuales:** Si solo se dispone de un ordenador con proyector, el profesorado puede dirigir el montaje y pedir a los alumnos que indiquen verbalmente dónde colocar cada pieza.
+- **Evaluación formativa:** El progreso mostrado en la barra permite al profesorado identificar rápidamente qué alumnos necesitan más apoyo.
+
 ##  Estructura del proyecto
 
 ```
